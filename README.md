@@ -1,21 +1,23 @@
-# AdventOfCode
+# Advent of Code Kubernetes Operator
 
-**TODO: Add description**
+Why not?
 
-## Installation
+## TODO
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `advent_of_code` to your list of dependencies in `mix.exs`:
+- [X] Add Dockerfile
+- [ ] Add Helm chart
+- [ ] Add reconciliation logic if `Result` resource is removed
+- [ ] Mark `Puzzle` as solved in status when solved
+- [ ] Add events to `Puzzle` when error occurs
+- [ ] Change `Result` `solved` attribute as `solvedAt`
+- [ ] Clean up hard-coded `:dev` environment used in `AdventOfCode.Application`
+- [ ] Add support for other years
+- [ ] Add integration tests
 
-```elixir
-def deps do
-  [
-    {:advent_of_code, "~> 0.1.0"}
-  ]
-end
+## Workarounds
+
+- I had to use the same image for both build and run images, otherwise I can't run my release due to the following error (even though `erlexec` does exist)
+
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/advent_of_code>.
-
+/app/releases/0.1.0/../../erts-13.1.2/bin/erl: exec: line 12: /app/erts-13.1.2/bin/erlexec: not found
+```

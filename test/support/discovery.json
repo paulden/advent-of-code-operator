@@ -4,7 +4,15 @@
       "kind": "Namespace",
       "name": "namespaces",
       "namespaced": false,
-      "verbs": ["create", "delete", "get", "list", "patch", "update", "watch"]
+      "verbs": [
+        "create",
+        "delete",
+        "get",
+        "list",
+        "patch",
+        "update",
+        "watch"
+      ]
     },
     {
       "kind": "ConfigMap",
@@ -87,7 +95,11 @@
       "kind": "Deployment",
       "name": "deployments/status",
       "namespaced": true,
-      "verbs": ["get", "patch", "update"]
+      "verbs": [
+        "get",
+        "patch",
+        "update"
+      ]
     },
     {
       "kind": "StatefulSet",
@@ -105,15 +117,35 @@
       ]
     }
   ],
-  
-  "advent-of-code.wttj.co/v1alpha1": [{"kind":"Result","name":"results","namespaced":true,"verbs":["*"]},{"kind":"Puzzle","name":"puzzles","namespaced":true,"verbs":["*"]}],
-  
+  "advent-of-code.wttj.co/v1alpha1": [
+    {
+      "kind": "Result",
+      "name": "results",
+      "namespaced": true,
+      "verbs": [
+        "*"
+      ]
+    },
+    {
+      "kind": "Puzzle",
+      "name": "puzzles",
+      "namespaced": true,
+      "verbs": [
+        "*"
+      ]
+    }
+  ],
   "events.k8s.io/v1": [
     {
       "kind": "Event",
       "name": "events",
       "namespaced": false,
-      "verbs": ["create", "get", "list", "watch"]
+      "verbs": [
+        "create",
+        "get",
+        "list",
+        "watch"
+      ]
     }
   ]
 }

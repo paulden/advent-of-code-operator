@@ -7,8 +7,6 @@ defmodule AdventOfCode.Application do
 
   @spec start(any, any) :: {:error, any} | {:ok, pid}
   def start(_type, _args) do
-    IO.inspect("started")
-
     children = [{AdventOfCode.Operator, conn: AdventOfCode.K8sConn.get!(:dev)}]
 
     opts = [strategy: :one_for_one, name: AdventOfCode.Supervisor]

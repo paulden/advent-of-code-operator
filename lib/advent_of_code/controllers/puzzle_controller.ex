@@ -1,8 +1,8 @@
 defmodule AdventOfCode.Controller.PuzzleController do
   @moduledoc """
   AdventOfCode: PuzzleController controller.
-
   """
+  
   use Bonny.ControllerV2
 
   step(Bonny.Pluggable.SkipObservedGenerations)
@@ -47,6 +47,7 @@ defmodule AdventOfCode.Controller.PuzzleController do
   defp module(day) do
     case day do
       1 -> AdventOfCode.Solvers.Day01
+      2 -> AdventOfCode.Solvers.Day02
     end
   end
 end
