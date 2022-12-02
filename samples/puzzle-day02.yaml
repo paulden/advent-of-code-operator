@@ -2,6 +2,7 @@ apiVersion: advent-of-code.wttj.co/v1alpha1
 kind: Puzzle
 metadata:
   name: pauldn-day02-y2022
+  namespace: advent-of-code
 spec:
   day: 2
   year: 2022

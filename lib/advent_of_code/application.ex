@@ -7,7 +7,7 @@ defmodule AdventOfCode.Application do
 
   @spec start(any, any) :: {:error, any} | {:ok, pid}
   def start(_type, _args) do
-    children = [{AdventOfCode.Operator, conn: AdventOfCode.K8sConn.get!(:dev)}]
+    children = [{AdventOfCode.Operator, conn: AdventOfCode.K8sConn.get!(:prod)}]
 
     opts = [strategy: :one_for_one, name: AdventOfCode.Supervisor]
     Supervisor.start_link(children, opts)

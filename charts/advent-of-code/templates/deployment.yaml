@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: advent-of-code
+  namespace: {{ .Values.namespace }}
+  labels:
+    k8s-app: advent-of-code
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      k8s-app: advent-of-code
+  template:
+    metadata:
+      labels:
+        k8s-app: advent-of-code
+    spec:
+      serviceAccountName: advent-of-code
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

@@ -6,7 +6,7 @@ defmodule AdventOfCode.Operator do
   controllers and serves as the entry point to the watching and handling
   processes.
   """
-  use Bonny.Operator, default_watch_namespace: "default"
+  use Bonny.Operator, default_watch_namespace: "advent-of-code"  # TODO: Environment variables where?
 
   step(Bonny.Pluggable.Logger, level: :info)
   step(:delegate_to_controller)

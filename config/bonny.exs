@@ -2,6 +2,8 @@
 import Config
 
 config :bonny,
+  operator_name: "advent-of-code",
+  group: "advent-of-code.wttj.co",
 
   # Function to call to get a K8s.Conn object.
   # The function should return a %K8s.Conn{} struct or a {:ok, %K8s.Conn{}} tuple
