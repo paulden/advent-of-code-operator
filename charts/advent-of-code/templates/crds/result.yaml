@@ -10,7 +10,6 @@ spec:
   names:
     kind: Result
     plural: results
-    shortNames: []
     singular: result
   scope: Namespaced
   versions:
@@ -31,7 +30,6 @@ spec:
           jsonPath: .spec.secondPart
           name: secondPart
           type: integer
-      deprecated: false
       deprecationWarning:
       name: v1alpha1
       schema:

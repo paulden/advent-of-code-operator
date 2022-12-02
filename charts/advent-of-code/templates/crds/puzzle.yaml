@@ -10,7 +10,6 @@ spec:
   names:
     kind: Puzzle
     plural: puzzles
-    shortNames: []
     singular: puzzle
   scope: Namespaced
   versions:
@@ -27,7 +26,6 @@ spec:
           jsonPath: .status.solved
           name: solved
           type: boolean
-      deprecated: false
       deprecationWarning:
       name: v1alpha1
       schema:
