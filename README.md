@@ -2,6 +2,45 @@
 
 Why not?
 
+Using [Bonny](https://github.com/coryodaniel/bonny) (framework used to build an Elixir Kubernetes operator).
+
+## Custom resources
+
+This operator adds two CRDs, `Puzzle` and `Result`.
+The logic is that new `Puzzle` resources will be solved by the operator that creates a `Result` resource in response, with the results.
+
+### `Puzzle`
+
+```yaml
+apiVersion: advent-of-code.wttj.co/v1alpha1
+kind: Puzzle
+metadata:
+  name: pauldn-day01-y2022
+  namespace: advent-of-code
+spec:
+  day: 1
+  year: 2022
+  input: |
+    123
+    456
+    789
+```
+
+### `Result`
+
+```yaml
+apiVersion: advent-of-code.wttj.co/v1alpha1
+kind: Result
+metadata:
+  name: pauldn-day01-y2022
+  namespace: advent-of-code
+spec:
+  day: 1
+  year: 2022
+  firstPart: 123
+  secondPart: 456
+```
+
 ## TODO
 
 - [X] Add Dockerfile
